@@ -233,7 +233,45 @@ The **jugbp1** class defines a set of methods to simulate filling and emptying o
             checkGoal() - checks if the goal capacity has been reached and prints a message
             
 
+### Example Usage
+
+                  class jugbp1 {
+                    var a_max = 4
+                    var b_max = 3
+                    var a = 0
+                    var b = 0
+                    var goal = 2
+                    }
+
+                  object jugp1
+                  {
+
+                    def main(args: Array[String]) {
+                      var w = new jugbp1();
+                              w.checkGoal();
+
+                    }
+                  }
 
 
+### Output:
+                  {4,0}
+                  {1,3}
+                  {1,0}
+                  {0,1}
+                  {4,1}
+                  {2,3}
+                  {2,0}
+                  {0,2}
+                  {4,2}
+                  Solution found !
+### Explation of Output 
 
+The code simulates the **"jug problem"** for two jugs, **A** and **B**, with maximum capacities of **4** and **3** respectively. The goal is to measure out **2** units of liquid using these jugs.
+
+The output of the code is a sequence of println statements that show the state of the jugs at each step of the process. The code first initializes the jugs with zero units of liquid, and then runs the checkGoal function which iteratively fills and empties the jugs until the goal is achieved.
+
+The output starts with the initial state of the jugs: "{0,0}". Then, the code starts to fill jug A, producing the output **"{4,0}"**. Next, it transfers liquid from A to B until B is full, producing the output **"{1,3}", "{0,4}"** . The code then empties jug B, producing the output **"{0,0}"**. Finally, it transfers liquid from A to B until B has 2 units, producing the output **"{2,2}"**, and then the code terminates with the message "Solution found!".
+
+Overall, the code demonstrates a simple algorithm for solving the jug problem, and the output shows the sequence of steps required to achieve the desired goal.
 
