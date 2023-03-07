@@ -57,7 +57,7 @@ The algorithm works by maintaining two sets: the visited set and the unvisited s
 
 ### Dependencies
 <br>
-This code uses the ***scala.collection.mutable*** package to implement mutable data structures like Map and Set. No additional dependencies are required.
+This code uses the **scala.collection.mutable** package to implement mutable data structures like Map and Set. No additional dependencies are required.
 <br>
 <br>
 
@@ -81,7 +81,90 @@ This code uses the ***scala.collection.mutable*** package to implement mutable d
 
 <br>
 
-3. The resulting **Map** can be used to determine the shortest distance from the starting vertex to any other vertex in the graph.           
+3. The resulting **Map** can be used to determine the shortest distance from the starting vertex to any other vertex in the graph.
+<br>
+<br>
+
+## Kruskal's Algorithm in Scala
+<br>
+
+This program implements Kruskal's algorithm in Scala, a greedy algorithm that finds a minimum spanning tree for a weighted, connected graph.<br>
+<br>
+
+### Input
+<br>
+The input to the program is an edge list with weights, defined as a list of tuples **(u, v, w)**, where **u** and **v** are the endpoints of an edge and **w** is its weight.<br>
+
+            
+                        val edges = List(
+                          (1, 2, 7), (1, 3, 9), (1, 6, 14),
+                          (2, 3, 10), (2, 4, 15),
+                          (3, 4, 11), (3, 6, 2),
+                          (4, 5, 6),
+                          (5, 6, 9)
+                        )
+                        
+                        
+ ### Output
+ <br>
+ 
+ The program outputs the edges in the minimum spanning tree, which is stored as a list of tuples **(u, v)**.
+ <br>
+ 
+ 
+                        println("Minimum spanning tree:")
+                        for ((u, v) <- mst) {
+                          println(s"$u -- $v")
+                        }
+                        
+                        
+### Code Explanation     
+<br>
+
+The code starts by defining the **kruskal** function, which takes the list of edges as input and returns a list of edges in the minimum spanning tree. <br>
+
+The function starts by initializing the disjoint-set data structure using a mutable map **parents**, which maps each vertex to its parent in the set. The **find** function recursively finds the parent of a vertex and performs path compression, while the **union** function joins two sets by setting the parent of one vertex to the parent of the other.<br> <br>
+
+
+                        val parents = mutable.Map[Int, Int]()
+                        def find(x: Int): Int = parents.getOrElseUpdate(x, x) match {
+                          case y if y == x => x
+                          case y => find(y)
+                        }
+                        def union(x: Int, y: Int): Unit = parents(find(x)) = find(y)
+                        
+                        
+The edges are sorted by weight using the sortBy function.
+
+
+                        val sortedEdges = edges.sortBy(_._3)
+
+
+The minimum spanning tree is found by iterating over the sorted edges and adding them to the tree if they connect two disjoint sets.<br>
+
+
+                        val mst = mutable.ListBuffer[(Int, Int)]()
+                        for ((u, v, w) <- sortedEdges) {
+                          if (find(u) != find(v)) {
+                            union(u, v)
+                            mst += ((u, v))
+                          }
+                        }
+
+
+Finally, the function returns the minimum spanning tree as a list.<br>
+
+
+                        mst.toList
+
+
+The main function of the program defines the input graph, calls the kruskal function to find the minimum spanning tree, and prints the edges in the tree.<br>
+
+
+
+ 
+
+
 
 
 
