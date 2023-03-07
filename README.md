@@ -179,12 +179,58 @@ After the loop, the function prints the minimum spanning tree by iterating over 
 The **main** function provides an example usage of the **prim** function by defining a sample graph as an array of arrays of **Edge** objects and calling the **prim** function with the graph and a starting vertex.<br>
 
 
+### Usage 
+
+To use this implementation, simply call the **prim** function with two arguments: the graph represented as an adjacency list of edges, and the starting vertex. For example, to find the minimum spanning tree of a graph with four vertices: <br>
+
+
+            val graph = Array(
+              Array(Edge(1, 2), Edge(2, 1), Edge(3, 3)),
+              Array(Edge(0, 2), Edge(2, 4)),
+              Array(Edge(0, 1), Edge(1, 4), Edge(3, 5)),
+              Array(Edge(0, 3), Edge(2, 5))
+            )
+
+            prim(graph, 2)
+
+
+### Output
+
+The minimum spanning tree is printed to the console in the following format:
+
+
+                  Minimum Spanning Tree:
+                  0 -> 2 (weight = 1)
+                  1 -> 0 (weight = 2)
+                  3 -> 0 (weight = 3)
 
 
 
+## Jug Filling Problem
+<br>
+
+This program solves the jug filling problem, which involves two jugs with known capacities and a desired goal capacity. The goal is to fill one or both jugs with water to reach the desired goal capacity.<br>
+
+### Code Description
+
+The **jugbp1** class defines a set of methods to simulate filling and emptying of jugs, and a **checkGoal()** method to check if the goal has been reached. The class has the following properties:
 
 
+            a_max - maximum capacity of the first jug
+            b_max - maximum capacity of the second jug
+            a - current amount of water in the first jug
+            b - current amount of water in the second jug
+            goal - desired goal capacity
+            
+            
+***The following methods are available:***
 
+            fillA() - fills the first jug to its maximum capacity
+            fillB() - fills the second jug to its maximum capacity
+            transferAtoB() - transfers water from the first jug to the second jug until the second jug is full or the first jug is empty
+            emptyA() - empties the first jug
+            emptyB() - empties the second jug
+            checkGoal() - checks if the goal capacity has been reached and prints a message
             
 
 
