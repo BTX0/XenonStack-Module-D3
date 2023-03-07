@@ -48,6 +48,7 @@ To use this implementation of the Depth-First Search algorithm, follow these ste
 ## Dijkstra's Algorithm in Scala
 <br>
 This is an implementation of Dijkstra's Algorithm in Scala, which is used to find the shortest path between nodes in a graph. The algorithm takes a graph represented as an adjacency list and a starting vertex as input, and outputs the shortest distances from the starting vertex to all other vertices in the graph. <br> <br>
+
 ### Functionality
 <br>
 The dijkstra method takes two arguments: the graph and the starting vertex. It returns a map of shortest distances from the starting vertex to all other vertices in the graph. <br>
