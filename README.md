@@ -44,8 +44,45 @@ To use this implementation of the Depth-First Search algorithm, follow these ste
             **println(dfsResult)** 
             
             
-## Dijkstra's Algorithm Implementation
+## Dijkstra's Algorithm in Scala
 <br>
+This is an implementation of Dijkstra's Algorithm in Scala, which is used to find the shortest path between nodes in a graph. The algorithm takes a graph represented as an adjacency list and a starting vertex as input, and outputs the shortest distances from the starting vertex to all other vertices in the graph. <br> <br>
+### Functionality
+<br>
+The dijkstra method takes two arguments: the graph and the starting vertex. It returns a map of shortest distances from the starting vertex to all other vertices in the graph. <br>
+
+The algorithm works by maintaining two sets: the visited set and the unvisited set. Initially, all vertices are unvisited and the distance to all vertices is set to infinity except for the starting vertex, which is set to 0. The algorithm repeatedly selects the unvisited vertex with the smallest distance and updates the distances of its neighbors. Once all vertices have been visited, the algorithm terminates and returns the map of shortest distances.<br> <br>
+
+
+### Dependencies
+<br>
+This code uses the ***scala.collection.mutable*** package to implement mutable data structures like Map and Set. No additional dependencies are required.
+<br>
+<br>
+
+### Usage
+<br>
+
+1. To use this implementation, simply define your graph as an adjacency list in the format of a **Map[Int, Map[Int, Int]]**, where the keys of the outer map are the vertices of the graph, and the values are inner maps that represent the edges emanating from each vertex. The keys of the inner maps are the vertices that the edge connects to, and the values are the weights of the edges <br>
+
+2. Once you have defined your graph, call the **dijkstra** function with the graph and the starting vertex as arguments to get a **Map[Int, Int]** that represents the shortest distances from the starting vertex to all other vertices in the graph.<br>
+
+            val graph = Map( <br>
+              1 -> Map(2 -> 7, 3 -> 9, 6 -> 14),<br>
+              2 -> Map(1 -> 7, 3 -> 10, 4 -> 15),<br>
+              3 -> Map(1 -> 9, 2 -> 10, 4 -> 11, 6 -> 2),<br>
+              4 -> Map(2 -> 15, 3 -> 11, 5 -> 6),<br>
+              5 -> Map(4 -> 6, 6 -> 9),<br>
+              6 -> Map(1 -> 14, 3 -> 2, 5 -> 9)<br>
+            )<br>
+
+            val distances = dijkstra(graph, 1)<br><br>
+           
+3. The resulting **Map** can be used to determine the shortest distance from the starting vertex to any other vertex in the graph.           
+
+
+
+
 
 
             
