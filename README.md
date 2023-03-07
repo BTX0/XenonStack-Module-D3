@@ -8,10 +8,10 @@ This is a Scala implementation of a graph data structure using an adjacency list
 
 ### For creating Graph 
 
-1. We create a class **"Graph.scala" **and where we create some method to create vertices and edge.
+1. We create a class ** "Graph.scala" ** and where we create some method to create vertices and edge.
 2. We create a Scala Object "TeasMain.Scala " in this  object we create our Graph instance and add edges and also call the methods of our Graph class.<br>
        * For add vertex you just write following code in "TestMain.scala" File :- <br>
-              val g: Graph[String] = new Graph  // this will create a graph <<br>
+              val g: Graph[String] = new Graph  // this will create a graph <br>
               g.addvertex(value="A") // this code add a vertex in our graph <br>
               g.addvertex(value="B")  <br>
        * For adding an edge you just write following code in "TestMain.scala" file :-  <br>
