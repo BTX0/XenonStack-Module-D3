@@ -162,8 +162,21 @@ Finally, the function returns the minimum spanning tree as a list.<br>
 The main function of the program defines the input graph, calls the kruskal function to find the minimum spanning tree, and prints the edges in the tree.<br>
 
 
+## Prim's Algorithm in Scala
 
- 
+This code implements Prim's algorithm for finding the minimum spanning tree of a connected, undirected graph with weighted edges. The algorithm works by starting at an arbitrary vertex and greedily adding the closest vertex to the tree until all vertices have been added.<br>
+
+### Code Explanation
+
+The code defines two classes, **Edge** and **Vertex**, to represent the edges and vertices of the graph. The **Edge** class has two fields, **to** and **weight**, which represent the vertex to which the edge connects and the weight of the edge, respectively. The **Vertex** class has four fields, **id**, **key**, **parent**, and **visited**, which represent the unique identifier of the vertex, the minimum key value for the vertex, the parent of the vertex in the minimum spanning tree, and whether or not the vertex has been visited, respectively. <br>
+
+The **prim** function takes two arguments, **graph** and **start**, which represent the graph as an array of arrays of **Edge** objects and the starting vertex, respectively. The function first creates an array of **Vertex** objects to represent the vertices of the graph and initializes their key values to infinity, except for the key value of the starting vertex, which is set to 0. The function then creates a priority queue to store the vertices in the order of their key values and adds the starting vertex to the queue.<br>
+
+The function then enters a loop that continues until the priority queue is empty. In each iteration of the loop, the function removes the vertex with the lowest key value from the queue, marks it as visited, and updates the key values of its neighboring vertices if they have not been visited and the weight of the edge between the vertices is less than the neighbor's current key value. The function then adds the neighboring vertices to the priority queue if they have been updated.<br>
+
+After the loop, the function prints the minimum spanning tree by iterating over the vertices and printing the parent-child relationships for each vertex that has a parent.<br>
+
+The **main** function provides an example usage of the **prim** function by defining a sample graph as an array of arrays of **Edge** objects and calling the **prim** function with the graph and a starting vertex.<br>
 
 
 
