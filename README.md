@@ -29,13 +29,13 @@ In the **"DfsAlgo1.scala"** file we write function to Visit all the vertex from 
 <br>
 To use this implementation of the Depth-First Search algorithm, follow these steps: <br>
 1. Create a graph represented as a Map where the keys are integers representing the vertices and the values are lists of integers representing the neighboring vertices.<br>
-                  **val graph = Map(**
-              **0 -> List(1,2,3),**
-              **1 -> List(0,3,4),**
-              **2 -> List(0,3),**
-              **3 -> List(0,1,2,4),**
-              **4 -> List(1,3)**
-            **)** <br>
+              val graph = Map( <br>
+              0 -> List(1,2,3), <br>
+              1 -> List(0,3,4), <br>
+              2 -> List(0,3), <br>
+              3 -> List(0,1,2,4),<br>
+              4 -> List(1,3) <br>
+            )<br>
 
 2. Call the dfsIterative method and pass in the graph and the starting vertex as arguments. This method will return a list of integers representing the order in which the vertices were visited during the Depth-First Search traversal. <br> 
                **val dfsResult = dfsIterative(graph, 0)** <br>
