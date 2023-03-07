@@ -1,2 +1,5 @@
 # XenonStack-Module-D3
-This is for review our D3 Module
+
+##For creating Graph 
+
+we create a class "Graph.scala" and where we create some method to create vertices and edge.
