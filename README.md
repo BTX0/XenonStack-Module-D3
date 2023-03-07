@@ -29,13 +29,14 @@ In the **"DfsAlgo1.scala"** file we write function to Visit all the vertex from 
 <br>
 To use this implementation of the Depth-First Search algorithm, follow these steps: <br>
 1. Create a graph represented as a Map where the keys are integers representing the vertices and the values are lists of integers representing the neighboring vertices.<br>
-              val graph = Map( <br>
-              0 -> List(1,2,3), <br>
-              1 -> List(0,3,4), <br>
-              2 -> List(0,3), <br>
-              3 -> List(0,1,2,4),<br>
-              4 -> List(1,3) <br>
-            )<br>
+
+              val graph = Map( 
+              0 -> List(1,2,3), 
+              1 -> List(0,3,4), 
+              2 -> List(0,3), 
+              3 -> List(0,1,2,4),
+              4 -> List(1,3) 
+            )
 
 2. Call the dfsIterative method and pass in the graph and the starting vertex as arguments. This method will return a list of integers representing the order in which the vertices were visited during the Depth-First Search traversal. <br> 
                **val dfsResult = dfsIterative(graph, 0)** <br>
@@ -67,17 +68,19 @@ This code uses the ***scala.collection.mutable*** package to implement mutable d
 
 2. Once you have defined your graph, call the **dijkstra** function with the graph and the starting vertex as arguments to get a **Map[Int, Int]** that represents the shortest distances from the starting vertex to all other vertices in the graph.<br>
 
-            val graph = Map( <br>
-              1 -> Map(2 -> 7, 3 -> 9, 6 -> 14),<br>
-              2 -> Map(1 -> 7, 3 -> 10, 4 -> 15),<br>
-              3 -> Map(1 -> 9, 2 -> 10, 4 -> 11, 6 -> 2),<br>
-              4 -> Map(2 -> 15, 3 -> 11, 5 -> 6),<br>
-              5 -> Map(4 -> 6, 6 -> 9),<br>
-              6 -> Map(1 -> 14, 3 -> 2, 5 -> 9)<br>
-            )<br>
+            val graph = Map( 
+              1 -> Map(2 -> 7, 3 -> 9, 6 -> 14),
+              2 -> Map(1 -> 7, 3 -> 10, 4 -> 15),
+              3 -> Map(1 -> 9, 2 -> 10, 4 -> 11, 6 -> 2),
+              4 -> Map(2 -> 15, 3 -> 11, 5 -> 6),
+              5 -> Map(4 -> 6, 6 -> 9),
+              6 -> Map(1 -> 14, 3 -> 2, 5 -> 9)
+            )
 
-            val distances = dijkstra(graph, 1)<br><br>
-           
+            val distances = dijkstra(graph, 1)
+
+<br>
+
 3. The resulting **Map** can be used to determine the shortest distance from the starting vertex to any other vertex in the graph.           
 
 
