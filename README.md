@@ -275,3 +275,38 @@ The output starts with the initial state of the jugs: "{0,0}". Then, the code st
 
 Overall, the code demonstrates a simple algorithm for solving the jug problem, and the output shows the sequence of steps required to achieve the desired goal.
 
+
+## Missionaries and Cannibals Problem
+
+This is a Scala program that solves the famous Missionaries and Cannibals Problem. The problem is as follows:
+
+On one side of a river, there are three missionaries and three cannibals. There is a boat that can carry up to two people at a time. The goal is to transport all six people to the other side of the river, such that no group of cannibals ever outnumber the missionaries on either side of the river.<br>
+
+
+### Usage
+
+      1. Clone the repository to your local machine.
+
+      2. Open the terminal and navigate to the project directory.
+
+      3. Run the following command to compile the program:
+
+                        scala missionariesprob.scala
+
+      4. Run the following command to execute the program:
+
+                        scala missionariesprob
+                        
+
+### Implementation
+
+The program is implemented using the case class **State**, which represents a state in the puzzle. The class has methods to check if a state is valid, if it is the goal state, and to move the missionaries and cannibals across the river.
+
+The **findSolution** function uses breadth-first search to find the solution to the puzzle. It generates all possible next states from the current state and checks if they are valid and have not been visited before. It then adds the new state to the visited set and creates a new path by appending the new state to the current path.
+
+The main function defines the initial state of the puzzle and finds the solution using the **findSolution** function.
+
+### Output
+
+The program will output the solution to the console, which is a list of states that represent each move in the solution path.
+
